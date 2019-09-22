@@ -1,0 +1,22 @@
+<!DOCTYPE html><script>
+'use strict';
+let sumInput = () => {
+  let arr = [];
+  let sum = 0;
+  
+    do {
+     let num = prompt('Number?','0');
+      arr.push(num);
+      if(num ===null || num ===''|| !isFinite(num)) break;
+    } while(true);
+    
+    arr.pop();
+    
+    for(let key of arr){
+      sum += +key;
+    }
+    
+    return sum;
+}
+alert(sumInput());
+</script>
