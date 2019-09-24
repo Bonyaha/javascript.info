@@ -1,0 +1,23 @@
+<!doctype html>
+<script src="https://en.js.cx/test/libs.js"></script>
+<script src="test.js"></script>
+<script>
+
+  let camelize = (str) => {
+   let arr = str.split('');
+    
+    arr.forEach((item, index) => {
+      if(item === '-') {
+        
+        arr.splice(index,1);
+        arr[index] = arr[index].toUpperCase();
+      }
+       
+    });
+    str = arr.join('');
+    return str;
+  }
+
+</script>
+
+</html>
