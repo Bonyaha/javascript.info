@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<script>
+  'use strict';
+
+  function filterRangeInPlace(arr, a, b) {
+   let arrLength = arr.length;
+   
+    arr.forEach((item, index, array) => {
+    if (a > item || item > b) return arr.splice(index, 1);
+    
+    });
+    
+    //if(arrLength !== arr.length) 
+   
+  }
+
+  let arr = [5, 3, 8, 1];
+
+  filterRangeInPlace(arr, 1, 4);
+  alert(arr);
+</script>
