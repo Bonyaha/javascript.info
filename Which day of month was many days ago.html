@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<script>
+  'use strict';
+//My version
+  function getDateAgo(date, days) {
+    let copyDate = new Date(date);
+
+    if (date.getDate() - days === 0) {
+      copyDate.setDate(0);
+      return copyDate.getDate();
+
+    } else if ((date.getDate() - days) < 0) {
+
+
+      let x = days - copyDate.getDate();
+
+
+      copyDate.setDate(0);
+
+
+      let y = copyDate.getDate() - x;
+
+
+
+      while (y < 0) {
+        copyDate.setDate(0);
+
+        y = copyDate.getDate() + y;
+      }
+
+
+      return y;
+    } else {
+      let res = copyDate.getDate() - days;
+      return res;
+    }
+
+  }
+  
+  //Solution from site
+  function getDateAgo(date, days) {
+  let dateCopy = new Date(date);
+
+  dateCopy.setDate(date.getDate() - days);
+  return dateCopy.getDate();
+}
+
+
+  let date = new Date(2015, 0, 2);
+  
+alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+</script>
