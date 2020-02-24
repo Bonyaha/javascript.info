@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+<head>
+
+<style>
+.button {
+  padding: 15px 25px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+
+<body>
+
+<p id="demo"></p>
+
+<button class="button" type="button"
+onclick="document.getElementById('demo').innerHTML = getSecondsToTomorrow()">
+Сколько минут до завтрешнего дня?</button>
+<script>
+ function getSecondsToTomorrow() {
+  let now = new Date();
+
+  // tomorrow date
+  let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+
+  let diff = tomorrow - now; // difference in ms
+  return Math.round( (diff / 1000)/60); // convert to minutes
+}
+</script>
+
+</body>
+</html> 
